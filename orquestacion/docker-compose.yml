@@ -1,0 +1,11 @@
+version: "3"
+services: 
+    node-app:
+        image: compdes2020:v1
+    nginx:
+        image: nginx
+        volumes: 
+            - ./nginx.conf:/etc/nginx/nginx.conf
+            - ./default.conf:/etc/nginx/conf.d/hello.conf
+        ports: 
+            - "80:80"
